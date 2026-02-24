@@ -9,8 +9,7 @@ export interface Meal {
   strTags: string | null;
   strSource: string;
   strYoutube: string;
-  isFavorite: boolean;
-  [key: string]: string | null | boolean;
+  [key: string]: string | null;
 }
 
 export interface MealResponse {
