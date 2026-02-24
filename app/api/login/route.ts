@@ -1,8 +1,9 @@
-import { adminAuth } from "@/lib/firebase-admin";
+import { initAdmin } from "@/lib/firebase-admin";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
+  const { adminAuth, adminDb } = initAdmin();
   const authHeader = request.headers.get("Authorization");
   const idToken = authHeader?.split("Bearer ")[1];
 
